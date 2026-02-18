@@ -54,6 +54,8 @@ services:
     volumes:
       - ~/vacop_jetson:/root/vacop_ws
       - ~/.ros:/root/.ros
+      - ~/vacop_colcon_build:/root/vacop_ws/build
+      - ~/vacop_colcon_install:/root/vacop_ws/install
     #depends_on: 
     #  - vision
     command: >
