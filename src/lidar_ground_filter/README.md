@@ -20,7 +20,7 @@ Ce nœud détecte les objets à partir des points restants (obstacles).
 
 ---
 
-## Configuration du Launch File (`ground_filter_bis.launch.py`)
+## Configuration du Launch File (`ground_filter.launch.py`)
 
 Le comportement du système est défini par les paramètres passés aux nœuds lors du lancement.
 
