@@ -186,7 +186,7 @@ Tous les paramètres se trouvent en tête de `vacop_vision/vision/vision_node.py
 | Constante | Valeur défaut | Effet si on augmente | Effet si on diminue |
 |---|---|---|---|
 | `CONF_THRESH` | `0.25` | Moins de détections, moins de faux positifs | Plus de détections, plus de faux positifs |
-| `CLS_CONF_THRESH` | `0.85` | Classifieur de feux plus sélectif (plus de `traffic_light_unknown`) | Classifieur plus permissif (risque d'erreurs de couleur) |
+| `CLS_CONF_THRESH` | `0.85` | Classifieur de feux plus sélectif | Classifieur plus permissif (risque d'erreurs de couleur) |
 
 
 
@@ -194,7 +194,7 @@ Tous les paramètres se trouvent en tête de `vacop_vision/vision/vision_node.py
 
 ---
 
-## Lancement dans le container (seul, pour test)
+## Lancement dans le conteneur Docker (seul, pour test)
 
 ```bash
 ros2 run vacop_vision vision_node
