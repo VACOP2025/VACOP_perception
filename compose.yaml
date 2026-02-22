@@ -54,19 +54,19 @@ services:
     volumes:
       - ~/vacop_jetson:/root/vacop_ws
       - ~/.ros:/root/.ros
-      - ~/vacop_colcon_build:/root/vacop_ws/build
-      - ~/vacop_colcon_install:/root/vacop_ws/install
     #depends_on: 
     #  - vision
     command: >
       bash -c "source /opt/ros/humble/setup.bash &&
                cd /root/vacop_ws &&
+               echo \"--- Etape 0: Hack Temporel ---\" &&
                echo '--- Etape 1: Messages ---' &&
                colcon build --symlink-install --packages-select rslidar_msg &&
                source install/setup.bash &&
                echo '--- Etape 2: LiDAR et Mapping ---' &&
-               colcon build --symlink-install --packages-select rslidar_sdk vacop_mapping vacop planif_locale rtabmap_localization odometry &&
+               colcon build --symlink-install --packages-select rslidar_sdk vacop_mapping planif_locale rtabmap_localization lidar_ground_filter &&
                source install/setup.bash &&
                export AMENT_PREFIX_PATH=/root/vacop_ws/install:$$AMENT_PREFIX_PATH &&
+               (ros2 launch lidar_ground_filter ground_filter_bis.launch.py &) &&
+               sleep 5 &&
                ros2 launch vacop_mapping rtabmap_lidar_launch.py"
-              
