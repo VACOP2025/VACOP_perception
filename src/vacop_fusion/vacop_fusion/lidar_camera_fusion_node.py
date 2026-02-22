@@ -31,7 +31,7 @@ class LiDARCameraFusion(Node):
         self.declare_parameter('use_best_pair', True)
         self.declare_parameter('publish_fused_cloud', True)
         self.declare_parameter('publish_obstacle_map', True)
-        self.declare_parameter('use_drivable_area', True)          # Utiliser la zone roulable
+        self.declare_parameter('use_drivable_area', True)          # la zone roulable
         self.declare_parameter('drivable_area_cost_weight', 50)    # Coût pour zones non-roulables
         self.declare_parameter('detection_depth_threshold', 15.0)  # mètres
         self.declare_parameter('obstacle_inflation_radius', 0.5)   # mètres
