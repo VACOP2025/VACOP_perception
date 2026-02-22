@@ -85,7 +85,7 @@ Le système est composé de **deux modules indépendants** qui communiquent via 
 
 ---
 
-## 🚧 Package en développement : `vacop_fusion`
+## Package en développement : `vacop_fusion`
 
 > ⚠️ Ce package **n'est pas disponible sur la branche `main`**.  
 > Il est accessible uniquement sur la branche **`perception/`**. Il contient un prototype en Python d'un noeud de fusion caméra-lidar et n'est pas encore finalisé.
