@@ -85,12 +85,14 @@ Le système est composé de **deux modules indépendants** qui communiquent via 
 
 ---
 
-##  Package en développement : `vacop_fusion`
+## 🚧 Package en développement : `vacop_fusion`
 
 > ⚠️ Ce package **n'est pas disponible sur la branche `main`**.  
-> Il est accessible uniquement sur la branche **`perception/`** . Il contient un prototype en Python d'un noeud de fusion caméra-lidar et n'est pas encore finalisé.
+> Il est accessible uniquement sur la branche **`perception/`**. Il contient un prototype en Python d'un noeud de fusion caméra-lidar et n'est pas encore finalisé.
 
 `vacop_fusion` contient un prototype (non testé) d'un nœud ROS 2 de fusion LiDAR-Caméra. Son rôle est de projeter les détections YOLO dans l'espace LiDAR afin d'estimer la position 3D des obstacles, et de combiner cette information avec le masque de zone roulable (TwinLiteNet) pour produire une `OccupancyGrid` destinée à Nav2 (`/local_costmap/obstacle_layer`).
+
+Le package inclut également un fichier de configuration Nav2 (`nav2_params_with_fusion.yaml`) adapté à cette fusion. Il y configure notamment un costmap local à trois couches: LiDAR 3D (`voxel_layer`), détections caméra fusionnées (`fusion_obstacle_layer`) et inflation ainsi qu'un contrôleur **MPPI** avec le critique `ObstaclesCritic` activé pour tenir compte des obstacles issus de la caméra lors de la planification de trajectoire.
 
 Pour y accéder :
 
