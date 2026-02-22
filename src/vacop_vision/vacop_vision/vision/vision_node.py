@@ -30,9 +30,9 @@ CAMERA_FPS = 30
 # Chemins des modèles
 #WORKSPACE_PATH = "/root/vacop_ws/src/vacop_vision"
 WORKSPACE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-YOLO_ENGINE = os.path.join(WORKSPACE_PATH, "models/yolo26m.engine")
-TWINLITE_ENGINE = os.path.join(WORKSPACE_PATH, "models/twinlite.engine")
-CLASSIFIER_ENGINE = os.path.join(WORKSPACE_PATH, "models/classifier.engine")
+YOLO_ENGINE = os.path.join(WORKSPACE_PATH, "../../models/yolo26m.engine")
+TWINLITE_ENGINE = os.path.join(WORKSPACE_PATH, "../../models/twinlite.engine")
+CLASSIFIER_ENGINE = os.path.join(WORKSPACE_PATH, "../../models/classifier.engine")
 
 CONF_THRESH = 0.25
 CLS_CONF_THRESH = 0.85
