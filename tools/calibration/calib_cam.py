@@ -6,6 +6,8 @@ import os
 
 DATASET_DIR = os.path.join(os.path.dirname(__file__), "dataset_calib_cam/dataset_cam")  # path to the calibration board images
 PATTERN = "photo_*.jpg" 
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "calib_parameters/cam_intrinsics")
+
 
 # Number of INNER CORNERS
 # Example: 9x6 square checkerboard -> (8,5) inner corners
@@ -79,7 +81,7 @@ print("Distortion [k1 k2 p1 p2 k3 ...]:\n", dist.ravel())
 print("Mean reprojection error (px):", mean_error)
 
 # Save (OpenCV YAML + NPZ)
-fs = cv2.FileStorage("calibration.yml", cv2.FILE_STORAGE_WRITE)
+fs = cv2.FileStorage(os.path.join(OUTPUT_DIR, "calibration.yml"), cv2.FILE_STORAGE_WRITE)
 fs.write("K", K)
 fs.write("dist", dist)
 fs.write("image_width", img_size[0])
